@@ -1,0 +1,70 @@
+/* --- Общие стили --- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', sans-serif; background:#f9f9f9; color:#333; line-height:1.6; scroll-behavior:smooth; }
+.container { width:85%; max-width:1000px; margin:auto; padding:20px 0; }
+
+/* --- Навигация --- */
+nav { background:#222; padding:15px 0; position:sticky; top:0; z-index:100; }
+.nav-content { display:flex; justify-content:space-between; align-items:center; }
+.logo { color:#fff; font-size:1.5rem; }
+.menu { list-style:none; display:flex; gap:20px; }
+.menu a { color:#fff; text-decoration:none; transition:color 0.3s; }
+.menu a:hover { color:#00aaff; }
+
+/* --- Хедер --- */
+header { background:linear-gradient(120deg, #007BFF, #00aaff); color:#fff; text-align:center; padding:80px 20px; border-radius:0 0 50px 50px; }
+header h1 { font-size:2.5rem; margin-bottom:10px; animation:fadeIn 2s; }
+header p { font-size:1.2rem; margin-bottom:20px; }
+
+/* --- Кнопки --- */
+.btn { display:inline-block; padding:10px 20px; background:#fff; color:#007BFF; font-weight:bold; border-radius:30px; text-decoration:none; transition:all 0.3s ease; margin-top:10px; }
+.btn:hover { background:#007BFF; color:#fff; transform:scale(1.05); }
+
+/* --- Разделы --- */
+.section { margin:50px 0; opacity:0; transform:translateY(20px); animation:fadeUp 1s forwards; }
+h2 { margin-bottom:20px; color:#222; position:relative; }
+h2::after { content:''; display:block; width:60px; height:3px; background:#007BFF; margin-top:5px; }
+
+/* --- Карточки --- */
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.card { background:#fff; padding:20px; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+
+/* --- Контакты --- */
+#contact p { margin:10px 0; }
+#contact a { color:#007BFF; text-decoration:none; font-weight:bold; }
+#contact a:hover { text-decoration:underline; }
+
+/* --- Футер --- */
+footer { background:#222; color:#fff; text-align:center; padding:20px 0; margin-top:50px; border-radius:20px 20px 0 0; }
+
+/* --- Анимации --- */
+@keyframes fadeIn { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-content {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .menu {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    header p {
+      font-size: 1rem;
+    }
+  
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
